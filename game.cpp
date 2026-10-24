@@ -2,6 +2,8 @@
 
 using namespace blit;
 
+int money = 0;
+
 ///////////////////////////////////////////////////////////////////////////
 //
 // init()
@@ -41,4 +43,8 @@ void render(uint32_t time) {
 // amount if milliseconds elapsed since the start of your game
 //
 void update(uint32_t time) {
+    if (buttons.pressed && Button::A) {
+        money++;
+        printf("Click");
+    }
 }

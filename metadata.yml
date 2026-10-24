@@ -1,6 +1,6 @@
-title: game title
-description: game description
-author: you
+title: Test Game
+description: Clicker type game made to test 32blit
+author: Youssef Ibrahim
 splash:
   file: assets/no-image.png
 icon:
