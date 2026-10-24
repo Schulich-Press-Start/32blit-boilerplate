@@ -1,11 +1,16 @@
 #include "game.hpp"
 #include <string>
 
+#include "audio/mp3-stream.hpp"
+#include "assets.hpp"
+
 using namespace blit;
 
 int money = 0;
 int upgradeCost = 10;
 int moneyPerClick = 1;
+
+MP3Stream stream;
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -15,6 +20,17 @@ int moneyPerClick = 1;
 //
 void init() {
     set_screen_mode(ScreenMode::hires);
+
+  // Files should be encoded as 22050Hz mono, but stereo and/or 44100Hz also work.
+  // (The output is still 22050Hz/mono)
+
+  // It's also possible to load directly from the SD card.
+  File::add_buffer_file("example.mp3", click_sound, click_sound_length);
+
+  // Pass false for do_duration_calc if you don't need the duration.
+  // (it requires decoding the entire file, which takes a while if reading from the SD card)
+  stream.load("ClickSound.mp3", true);
+
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -64,6 +80,7 @@ void render(uint32_t time) {
 void update(uint32_t time) {
     if (buttons.pressed & Button::A) {
         money += moneyPerClick;
+        stream.play(0);
     } 
     if (buttons.pressed & Button::X) {
         //upgrade

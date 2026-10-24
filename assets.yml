@@ -5,4 +5,7 @@
 assets.cpp:
   assets/no-image.png:
     name: asset_no_image
+  ClickSound.mp3:
+    name: click_sound
+    type: raw/binary
 
