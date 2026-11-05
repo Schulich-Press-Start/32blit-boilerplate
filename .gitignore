@@ -24,7 +24,7 @@ DerivedData/
 
 # 🤖 AI Code Assistants & LLM Frameworks
 
-# Cline (formerly Prevent/Devins) config, memory, and MCP files
+# Cline config, memory, and MCP files
 .cline/
 cline_docs/
 .clinerules
@@ -49,8 +49,6 @@ CLAUDE.local.md
 .cursorrules
 .continue/
 .copilot/
-ai_docs/
-memory/
 
 # API Keys and Environment Secrets
 .env

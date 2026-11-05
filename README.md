@@ -15,7 +15,7 @@ handling, and some tidying up to fit in with how I do things.
 [Use this template](https://github.com/32blit/32blit-boilerplate/generate) to
 generate your own project (creates a new repository for you to keep your code tracked on GitHub).
 
-* **Edit the CMakeList.txt file to set the name of your project! (LINE 5 - no spaces allowed in the name)**
+* **Edit the CMakeLists.txt file to set the name of your project! (LINE 5 - no spaces allowed in the name)**
 * **Edit the metadata.yml file to set the information for your project!**
 * Edit the LICENSE file to set your name on the license
 * Write lots of super cool code!
@@ -31,10 +31,13 @@ cmake -D32BLIT_DIR=/path/to/32blit-sdk/ .. # The SDK path might be detected auto
 
 After that, the Makefile in `build` will have a target for your game name (whatever you set in line 5 of `CMakeLists.txt`)
 ```
-make my-game-name
+cmake --build . --target my-game-name # Option 1: CMake (slightly more flexible)
+make my-game-name # Option 2: plain makefile
 ```
 
-After that your executable will be in the build directory. You can just run it through the command line
+After that your executable will be in the build directory. You can just run it through the command line.
+
+*(*For macOS, you might see a .app bundle to run. I haven't been able to test this myself)*
 
 Platform/Editor specific instructions [can be found in the main 32blit repo](https://github.com/32blit/32blit-sdk#you-will-need)
 (For Visual Studio, you should follow the "Option 2" instructions, as the boilerplate does not contain a solution file)
