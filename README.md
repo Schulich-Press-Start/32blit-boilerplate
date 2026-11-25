@@ -23,6 +23,22 @@ generate your own project (creates a new repository for you to keep your code tr
 You should then be able to follow the usual build instructions.
 
 For local builds this is:
+
+First time setup (Ubuntu Linux installs shown here):
+
+```
+sudo apt install git gcc g++ gcc-arm-none-eabi cmake make \
+python3 python3-pip python3-setuptools \
+libsdl2-dev libsdl2-image-dev libsdl2-net-dev unzip
+```
+```
+pip3 install 32blit "bitstring<5"
+# add --break-system-packages if you get the "error: externally-managed-environment" message and you're feeling brave enough
+```
+
+
+Regular setup:
+
 ```
 mkdir build
 cd build
